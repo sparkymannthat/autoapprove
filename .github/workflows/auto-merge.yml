@@ -42,7 +42,7 @@ jobs:
         fi
 
     - name: Merge Pull Request
-      if: ${{env.match == 'true' && env.mergeable == 'true'}}
+      if: env.match == 'true'
       run: |
         curl -X PUT \
           -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
